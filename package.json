@@ -1,0 +1,67 @@
+{
+  "name": "personal-ai-assistant",
+  "version": "1.0.0",
+  "description": "Personal AI Assistant using Electron, React, and Ollama",
+  "main": "public/electron.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "dist": "npm run build && electron-builder"
+  },
+  "build": {
+    "appId": "com.jayde.personalai",
+    "productName": "Personal AI Assistant",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "files": [
+      "public/electron.js",
+      "preload.js",
+      "build/**/*",
+      "node_modules/**/*"
+    ]
+  },
+  "dependencies": {
+    "@langchain/community": "^1.1.29",
+    "@langchain/core": "^1.2.17",
+    "fs-extra": "^11.4.1",
+    "hnswlib-node": "^3.0.0",
+    "langchain": "^1.5.16",
+    "lucide-react": "^0.263.1",
+    "pdf-parse": "^2.4.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^10.1.0",
+    "react-scripts": "5.0.1",
+    "react-syntax-highlighter": "^16.1.2",
+    "remark-gfm": "^4.0.1",
+    "shelljs": "^0.10.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "electron": "^25.3.0",
+    "electron-builder": "^24.6.3",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "homepage": ".",
+  "allowScripts": {
+    "electron@25.9.8": true,
+    "hnswlib-node@3.0.0": true
+  }
+}
